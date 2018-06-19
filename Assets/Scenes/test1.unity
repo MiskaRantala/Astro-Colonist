@@ -431,8 +431,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702145007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.332, y: 1, z: 0}
-  m_LocalScale: {x: 11.335036, y: 1, z: 1}
+  m_LocalPosition: {x: -4.774, y: 1, z: 0}
+  m_LocalScale: {x: 6.450397, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1692720958}
   m_RootOrder: 10
@@ -639,6 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179208701}
   - component: {fileID: 1179208703}
+  - component: {fileID: 1179208702}
   m_Layer: 11
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -659,6 +660,18 @@ Transform:
   m_Father: {fileID: 1692720958}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179208702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179208700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee5782668a85b14dbe3e388d770e5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.05
 --- !u!212 &1179208703
 SpriteRenderer:
   m_ObjectHideFlags: 0
