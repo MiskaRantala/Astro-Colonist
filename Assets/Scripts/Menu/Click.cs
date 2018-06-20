@@ -10,4 +10,9 @@ public class Click : MonoBehaviour
     {
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
