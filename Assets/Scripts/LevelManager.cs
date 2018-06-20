@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
-    /// <summary>
-    /// A prefab for creating a single tile
-    /// </summary>
+    
+    // A prefab for creating a single tile
     [SerializeField]
     private GameObject tile;
 
-    /// <summary>
-    /// Calculates the size and returns it as a float
-    /// </summary>
+    // Change these values to affect map size
+    private int mapWidth = 15;
+    private int mapHeight = 10;
+
+    // Calculates the size and returns it as a float
     public float TileSize
     {
         get { return tile.GetComponent<SpriteRenderer>().sprite.bounds.size.x; }
@@ -30,31 +31,28 @@ public class LevelManager : MonoBehaviour {
 		
 	}
 
-    /// <summary>
-    /// Creates our level
-    /// </summary>
+    // Creates our level
     private void CreateLevel()
     {
+        Vector3 worldStartPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
 
-        for (int x = 0; x < 20; x++) //y position
+        for (int y = 0; y < mapHeight; y++) // map height
         {
-            for (int y = 0; y < 20; y++) //x position
+            for (int x = 0; x < mapWidth; x++) // map width
             {
-                PlaceTile(x, y);
+                PlaceTile(x, y, worldStartPosition);
             }
         }
     }
 
-    /// <summary>
-    /// Places the tiles where we want
-    /// </summary>
-    private void PlaceTile(int x, int y)
+    // Places the tiles where we want
+    private void PlaceTile(int x, int y, Vector3 worldStartPosition)
     {
-        //Creates a new tile and makes a reference to that tile in the NewTile
+        // Creates a new tile and makes a reference to that tile in the NewTile
         GameObject newTile = Instantiate(tile);
 
-        //Uses the new tile variable to change the position of the tile
-        newTile.transform.position = new Vector3(TileSize * x, TileSize * y, 0);
+        // Uses the new tile variable to change the position of the tile
+        newTile.transform.position = new Vector3(worldStartPosition.x + (TileSize * x), worldStartPosition.y - (TileSize * y), 0);
     }
 
 }
