@@ -10,12 +10,12 @@ public class EnemyMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        goalPos = GameObject.FindGameObjectWithTag("Goal").transform.position;
+        // goalPos = GameObject.FindGameObjectWithTag("Goal").transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Move();
+        // Move();
 	}
 
     private void Move()
