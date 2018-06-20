@@ -1,16 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿public struct Point {
 
-public class Point : MonoBehaviour {
+    public int X { get; set; }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int Y { get; set; }
+
+    public Point(int x, int y)
+    {
+        this.X = x;
+        this.Y = y;
+    }
 }

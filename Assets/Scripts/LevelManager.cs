@@ -1,6 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
@@ -9,9 +8,14 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     private GameObject tile;
 
+    [SerializeField]
+    private Transform map;
+
     // Change these values to affect map size
     private int mapWidth = 15;
     private int mapHeight = 10;
+
+    public Dictionary<Point, TileScript> Tiles { get; set; } 
 
     // Calculates the size and returns it as a float
     public float TileSize
@@ -34,6 +38,8 @@ public class LevelManager : MonoBehaviour {
     // Creates our level
     private void CreateLevel()
     {
+        Tiles = new Dictionary<Point, TileScript>();
+
         Vector3 worldStartPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
 
         for (int y = 0; y < mapHeight; y++) // map height
@@ -49,10 +55,11 @@ public class LevelManager : MonoBehaviour {
     private void PlaceTile(int x, int y, Vector3 worldStartPosition)
     {
         // Creates a new tile and makes a reference to that tile in the NewTile
-        GameObject newTile = Instantiate(tile);
+        TileScript newTile = Instantiate(tile).GetComponent<TileScript>();
 
         // Uses the new tile variable to change the position of the tile
-        newTile.transform.position = new Vector3(worldStartPosition.x + (TileSize * x), worldStartPosition.y - (TileSize * y), 0);
-    }
+        newTile.GetComponent<TileScript>().Setup(new Point(x, y), new Vector3(worldStartPosition.x + (TileSize * x), worldStartPosition.y - (TileSize * y), 0), map);
 
+        Tiles.Add(new Point(x, y), newTile);
+    }
 }
