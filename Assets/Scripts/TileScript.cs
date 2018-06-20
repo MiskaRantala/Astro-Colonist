@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-
+/*
 /// <summary>
 /// This script is used for all tiles in the game
 /// </summary>
@@ -27,9 +27,9 @@ public class TileScript : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    public bool Walkable { get; set }
+    public bool Walkable { get; set; }
 
-    public bool Debugging { get; set }
+    public bool Debugging { get; set; }
 
     /// <summary>
     /// The tile's center world position
@@ -38,7 +38,7 @@ public class TileScript : MonoBehaviour
     {
         get
         {
-            return new Vector2(transform.position.x + (GetComponent<SpriteRenderer>().bounds.size.x));
+            return new Vector2(transform.position.x + (GetComponent<SpriteRenderer>().bounds.size.x), 0); //????????????????
         }
     }
 
@@ -66,7 +66,7 @@ public class TileScript : MonoBehaviour
         this.GridPosition = gridPos;
         transform.position = worldPos;
         transform.SetParent(parent);
-        LevelManager.instance.Tiles.Add(gridPos, this);
+        LevelManager.Instance.Tiles.Add(gridPos, this);
     }
 
     /// <summary>
@@ -89,7 +89,7 @@ public class TileScript : MonoBehaviour
                 PlaceTurret();
             }
         }
-        else if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn == null && Input.GetButtonDown(0))
+        else if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn == null && Input.GetButtonDown("0"))
         {
             if (myTurret != null)
             {
@@ -116,7 +116,7 @@ public class TileScript : MonoBehaviour
     private void PlaceTurret()
     {
         // Creates the turret
-        GameObject turret = (GameObject)Instantiate(GameManager.Instance.ClickedBtn.TurretPrefab, transform. ?????????)
+        GameObject turret = (GameObject)Instantiate(GameManager.Instance.ClickedBtn.TurretPrefab, transform.up); //?????????
 
         // Set the sorting layer order on the turret
         turret.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
@@ -148,3 +148,4 @@ public class TileScript : MonoBehaviour
         spriteRenderer.color = newColor;
     }
 }
+*/

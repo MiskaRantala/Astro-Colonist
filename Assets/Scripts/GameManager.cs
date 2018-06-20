@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-
+/*
 public class GameManager : Singleton<GameManager>
 {
     /// <summary>
@@ -134,7 +134,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (Currency >= ClickedBtn.Price)
         {
-            Currency -= ClickedBtn.Price);
+            Currency -= ClickedBtn.Price;
             Hover.Instance.Deactivate();
         }
     }
@@ -171,8 +171,5 @@ public class GameManager : Singleton<GameManager>
             Hover.Instance.Deactivate();
         }
     }
-
-
-
-
 }
+*/
