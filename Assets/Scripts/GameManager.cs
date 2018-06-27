@@ -8,10 +8,29 @@ public class GameManager : Singleton<GameManager>
 {
     public TowerBtn ClickedBtn { get; set; }
 
+    private int currency;
+
+    [SerializeField]
+    private Text currencyTxt;
+
+    public int Currency
+    {
+        get
+        {
+            return currency;
+        }
+
+        set
+        {
+            currency = value;
+            currencyTxt.text = "  " + value.ToString() + " <color=yellow>monies</color>";
+        }
+    }
+    
     // Use this for initialization
     void Start ()
     {
-
+        Currency = 5;
 	}
 	
 	// Update is called once per frame
