@@ -23,7 +23,7 @@ public class GameManager : Singleton<GameManager>
         set
         {
             currency = value;
-            currencyTxt.text = "  " + value.ToString() + " <color=yellow>monies</color>";
+            currencyTxt.text = "  " + value.ToString() + " <color=yellow>$</color>";
         }
     }
     
@@ -41,15 +41,25 @@ public class GameManager : Singleton<GameManager>
 
     public void pickTower(TowerBtn towerBtn)
     {
-        this.ClickedBtn = towerBtn;
-        Hover.Instance.Activate(towerBtn.Sprite);
+        if (Currency >= towerBtn.Price)
+        {
+            this.ClickedBtn = towerBtn;
+            Hover.Instance.Activate(towerBtn.Sprite);
+        }
     }
 
     public void buyTower()
     {
-        // Remove hover icon
-        Hover.Instance.Deactivate();
-        ClickedBtn = null;
+        if (Currency >= ClickedBtn.Price)
+        {
+            // Reduces currency according to the tower's price
+            Currency -= ClickedBtn.Price;
+
+            // Remove hover icon
+            Hover.Instance.Deactivate();
+
+            ClickedBtn = null;
+        }
     }
 
     private void HandleEscape()
