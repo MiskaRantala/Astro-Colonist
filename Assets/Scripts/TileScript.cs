@@ -13,6 +13,10 @@ public class TileScript : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    public bool Walkable { get; set; }
+
+    public bool Debugging { get; set; }
+
     // Use this for initialization
     private void Start()
     {
@@ -27,6 +31,7 @@ public class TileScript : MonoBehaviour
 
     public void Setup(Point gridPos, Vector3 worldPos, Transform parent)
     {
+        Walkable = true;
         IsEmpty = true;
         this.GridPosition = gridPos;
         transform.position = worldPos;
@@ -37,11 +42,11 @@ public class TileScript : MonoBehaviour
     {
         if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)
         {
-            if (IsEmpty)
+            if (IsEmpty && !Debugging)
             {
                 ColorTile(emptyColor);
             }
-            if (!IsEmpty)
+            if (!IsEmpty && !Debugging)
             {
                 ColorTile(fullColor);
             }
@@ -54,7 +59,10 @@ public class TileScript : MonoBehaviour
 
     private void OnMouseExit()
     {
-        ColorTile(Color.white);
+        if (!Debugging)
+        {
+            ColorTile(Color.white);
+        }
     }
 
     private void PlaceTower()
@@ -69,6 +77,8 @@ public class TileScript : MonoBehaviour
         ColorTile(Color.white);
 
         GameManager.Instance.buyTower();
+
+        Walkable = false;
     }
 
     private void ColorTile(Color newColor)

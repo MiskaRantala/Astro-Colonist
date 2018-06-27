@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : Singleton<LevelManager> {
 
     
     // A prefab for creating a single tile
@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour {
     // Change these values to affect map size
     private int mapWidth = 15;
     private int mapHeight = 10;
+
+    private Point mapSize;
 
     public Dictionary<Point, TileScript> Tiles { get; set; } 
 
@@ -40,6 +42,8 @@ public class LevelManager : MonoBehaviour {
     {
         Tiles = new Dictionary<Point, TileScript>();
 
+        mapSize = new Point(mapWidth, mapHeight);
+
         Vector3 worldStartPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
 
         for (int y = 0; y < mapHeight; y++) // map height
@@ -61,5 +65,10 @@ public class LevelManager : MonoBehaviour {
         newTile.GetComponent<TileScript>().Setup(new Point(x, y), new Vector3(worldStartPosition.x + (TileSize * x), worldStartPosition.y - (TileSize * y), 0), map);
 
         Tiles.Add(new Point(x, y), newTile);
+    }
+
+    public bool InBounds(Point position)
+    {
+        return position.X >= 0 && position.Y >= 0 && position.X < mapSize.X && position.Y < mapSize.Y;
     }
 }
