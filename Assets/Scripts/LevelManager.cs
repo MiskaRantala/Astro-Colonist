@@ -17,6 +17,14 @@ public class LevelManager : Singleton<LevelManager> {
 
     private Point mapSize;
 
+    [SerializeField]
+    private GameObject portalPrefab;
+
+    [SerializeField]
+    private GameObject endPortalPrefab;
+
+    public Portal Portal { get; set; }
+
     public Dictionary<Point, TileScript> Tiles { get; set; } 
 
     // Calculates the size and returns it as a float
