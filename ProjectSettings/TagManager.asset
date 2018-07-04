@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Turret
   - Goal
+  - EndPortal
   layers:
   - Default
   - TransparentFX

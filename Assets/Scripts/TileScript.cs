@@ -5,6 +5,14 @@ public class TileScript : MonoBehaviour
 {
     public Point GridPosition { get; private set; }
 
+    public Vector2 WorldPosition
+    {
+        get
+        {
+            return new Vector2(transform.position.x + (GetComponent<SpriteRenderer>().bounds.size.x / 2), transform.position.y - (GetComponent<SpriteRenderer>().bounds.size.y / 2));
+        }
+    }
+
     public bool IsEmpty { get; private set; }
 
     // Colors for hovering tiles depending if the tile is available
@@ -68,7 +76,7 @@ public class TileScript : MonoBehaviour
     private void PlaceTower()
     {
         GameObject tower = (GameObject) Instantiate(GameManager.Instance.ClickedBtn.TowerPrefab, transform.position, Quaternion.identity);
-        tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
+        tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y + 1;
 
         // Create towers under the specific tile in unity hierarchy
         tower.transform.SetParent(transform);

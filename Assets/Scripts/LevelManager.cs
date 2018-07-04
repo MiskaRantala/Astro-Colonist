@@ -17,13 +17,31 @@ public class LevelManager : Singleton<LevelManager> {
 
     private Point mapSize;
 
+    private Stack<Node> path;
+    
+    public Stack<Node> Path
+    {
+        get
+        {
+            if (path == null)
+            {
+                GeneratePath();
+            }
+
+            return new Stack<Node>(new Stack<Node>(path));
+        }
+    }
+
     [SerializeField]
     private GameObject portalPrefab;
 
     [SerializeField]
     private GameObject endPortalPrefab;
 
-    public Portal Portal { get; set; }
+    private Point blueSpawn;
+    private Point redSpawn;
+
+    public Portal SpawnPortal { get; set; }
 
     public Dictionary<Point, TileScript> Tiles { get; set; } 
 
@@ -33,8 +51,16 @@ public class LevelManager : Singleton<LevelManager> {
         get { return tile.GetComponent<SpriteRenderer>().sprite.bounds.size.x; }
     }
 
-	// Use this for initialization
-	void Start ()
+    public Point BlueSpawn
+    {
+        get
+        {
+            return blueSpawn;
+        }
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         CreateLevel();
 	}
@@ -61,6 +87,8 @@ public class LevelManager : Singleton<LevelManager> {
                 PlaceTile(x, y, worldStartPosition);
             }
         }
+
+        SpawnPortals();
     }
 
     // Places the tiles where we want
@@ -78,5 +106,23 @@ public class LevelManager : Singleton<LevelManager> {
     public bool InBounds(Point position)
     {
         return position.X >= 0 && position.Y >= 0 && position.X < mapSize.X && position.Y < mapSize.Y;
+    }
+
+    private void SpawnPortals()
+    {
+        blueSpawn = new Point(0, 0);
+        // portalPrefab.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        GameObject tmp = (GameObject) Instantiate(portalPrefab, Tiles[BlueSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+        SpawnPortal = tmp.GetComponent<Portal>();
+        SpawnPortal.name = "SpawnPortal";
+
+        redSpawn = new Point(14, 9);
+        // endPortalPrefab.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        Instantiate(endPortalPrefab, Tiles[redSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+    }
+
+    public void GeneratePath()
+    {
+        path = AStar.GetPath(BlueSpawn, redSpawn);
     }
 }

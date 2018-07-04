@@ -24,4 +24,14 @@
     {
         return new Point(first.X - second.X, first.Y - second.Y);
     }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
 }
