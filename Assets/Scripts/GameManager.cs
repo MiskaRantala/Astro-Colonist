@@ -25,6 +25,8 @@ public class GameManager : Singleton<GameManager>
 
     public ObjectPool Pool { get; set; }
 
+    private Tower selectedTower;
+
     public bool WaveActive
     {
         get
@@ -85,6 +87,27 @@ public class GameManager : Singleton<GameManager>
 
             ClickedBtn = null;
         }
+    }
+
+    public void SelectTower(Tower tower)
+    {
+        if (selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+
+        selectedTower = tower;
+        selectedTower.Select();
+    }
+
+    public void DeselectTower()
+    {
+        if (selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+
+        selectedTower = null;
     }
 
     private void HandleEscape()
