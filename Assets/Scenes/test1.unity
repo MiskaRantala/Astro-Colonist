@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &256337856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000023842, y: -2.4222}
+  m_AnchoredPosition: {x: -2.8e-14, y: 0.00000011921}
   m_SizeDelta: {x: 432.8, y: 432.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &256337857
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 460439434}
   - component: {fileID: 460439433}
   m_Layer: 5
-  m_Name: Text
+  m_Name: LivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1836,9 +1836,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78657ecd843012a438ed91c4e34732f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  livesText: {fileID: 460439435}
   waveText: {fileID: 356251258}
   currencyTxt: {fileID: 1154102738}
   waveBtn: {fileID: 599812453}
+  GameOverMenu: {fileID: 256337855}
 --- !u!4 &1355179333
 Transform:
   m_ObjectHideFlags: 0
@@ -1941,7 +1943,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1581635548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1355179332}
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1581635548
@@ -2010,7 +2023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -35.549988, y: -224.97}
+  m_AnchoredPosition: {x: -35.549927, y: -224.97}
   m_SizeDelta: {x: 72, y: 450.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1624622118
@@ -2117,7 +2130,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1716647235}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1355179332}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1716647235
@@ -2185,7 +2209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00000023842, y: -0.0000019073}
+  m_AnchoredPosition: {x: 0, y: -0.0000019073486}
   m_SizeDelta: {x: -46.32, y: -21.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768790238

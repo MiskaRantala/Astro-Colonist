@@ -84,6 +84,8 @@ public class Monster : MonoBehaviour {
         if (other.tag == "EndPortal")
         {
             StartCoroutine(Scale(new Vector3(1, 1), new Vector3(0.1f, 0.1f), true));
+
+            GameManager.Instance.Lives--;
         }
     }
 
