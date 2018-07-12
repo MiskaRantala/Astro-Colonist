@@ -7,6 +7,9 @@ public class Tower : MonoBehaviour {
     [SerializeField]
     private string projectileType;
 
+    [SerializeField]
+    private float projectileSpeed;
+
     private SpriteRenderer mySpriteRenderer;
 
     private Monster target;
@@ -20,8 +23,29 @@ public class Tower : MonoBehaviour {
     [SerializeField]
     private float attackCooldown;
 
-	// Use this for initialization
-	void Start ()
+    public float ProjectileSpeed
+    {
+        get
+        {
+            return projectileSpeed;
+        }
+    }
+
+    public Monster Target
+    {
+        get
+        {
+            return target;
+        }
+
+        set
+        {
+            target = value;
+        }
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 	}
@@ -31,7 +55,7 @@ public class Tower : MonoBehaviour {
     {
         Attack();
 
-        Debug.Log(target);
+        Debug.Log(Target);
 	}
 
     public void Select()
@@ -52,12 +76,12 @@ public class Tower : MonoBehaviour {
             }
         }
 
-        if (target == null && monsters.Count > 0)
+        if (Target == null && monsters.Count > 0)
         {
-            target = monsters.Dequeue();
+            Target = monsters.Dequeue();
         }
 
-        if (target != null && target.IsActive)
+        if (Target != null && Target.IsActive)
         {
             if (canAttack)
             {
@@ -73,6 +97,8 @@ public class Tower : MonoBehaviour {
         Projectile projectile = GameManager.Instance.Pool.GetObject(projectileType).GetComponent<Projectile>();
 
         projectile.transform.position = transform.position;
+
+        projectile.Initialize(this);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -87,7 +113,7 @@ public class Tower : MonoBehaviour {
     {
         if (other.tag == "Monster")
         {
-            target = null;
+            Target = null;
         }
     }
 }
