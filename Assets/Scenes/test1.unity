@@ -1866,7 +1866,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefabs:
-  - {fileID: 1930808239751052, guid: 248b285f201169b47805f41e89f3ef72, type: 2}
+  - {fileID: 1927344837154390, guid: 7e5725f0875e5984ab3ba373f94c7f52, type: 2}
+  - {fileID: 1531554247162534, guid: 8f05466d5c801f240af62955f3d6b175, type: 2}
+  - {fileID: 1035041993600030, guid: 18b2219775f61d8408b5e61e5b69ce06, type: 2}
   - {fileID: 1738979895209650, guid: 9722e485deb3d134cb08cb97fbe6473f, type: 2}
 --- !u!1 &1581635545
 GameObject:

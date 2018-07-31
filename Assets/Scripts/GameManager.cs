@@ -167,14 +167,20 @@ public class GameManager : Singleton<GameManager>
 
         for (int i = 0; i < wave; i++)
         {
-            int monsterIndex = Random.Range(0, 0);
+            int monsterIndex = Random.Range(0, 3);
 
             string type = string.Empty;
 
             switch (monsterIndex)
             {
                 case 0:
-                    type = "PlaceholderMonster";
+                    type = "BlueMonster";
+                    break;
+                case 1:
+                    type = "OrangeMonster";
+                    break;
+                case 2:
+                    type = "GreenMonster";
                     break;
             }
 
