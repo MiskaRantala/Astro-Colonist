@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114838819985927406}
   - component: {fileID: 61116837645355280}
   - component: {fileID: 50791351909729116}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthOrangeMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 224922760163794356}
   - component: {fileID: 222571361175435942}
   - component: {fileID: 114662312771537572}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 224580941567086044}
   - component: {fileID: 222678559672094420}
   - component: {fileID: 114467230638939736}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114621587324035418}
   - component: {fileID: 114539085745114054}
   - component: {fileID: 114463660012276096}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be70b157dede4e6ea28fe0a8ff76d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillAmount: 0
   content: {fileID: 114662312771537572}
 --- !u!114 &114467230638939736
 MonoBehaviour:
@@ -257,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd1a1d8c71cc74d9e28395af565c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
 --- !u!212 &212328329760568836
 SpriteRenderer:
   m_ObjectHideFlags: 1

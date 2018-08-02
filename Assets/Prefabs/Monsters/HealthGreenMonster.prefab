@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224579943510280570}
   - component: {fileID: 222556049839859260}
   - component: {fileID: 114638949897840130}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224540500090012716}
   - component: {fileID: 222614776067500682}
   - component: {fileID: 114189289730764424}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114941128715971034}
   - component: {fileID: 61684012248554124}
   - component: {fileID: 50013301070162260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthGreenMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114746174544768248}
   - component: {fileID: 114474604039866128}
   - component: {fileID: 114626015503678864}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be70b157dede4e6ea28fe0a8ff76d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillAmount: 0
   content: {fileID: 114638949897840130}
 --- !u!114 &114638949897840130
 MonoBehaviour:
