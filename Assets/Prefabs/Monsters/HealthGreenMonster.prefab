@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114941128715971034}
   - component: {fileID: 61684012248554124}
   - component: {fileID: 50013301070162260}
+  - component: {fileID: 95657354641929596}
   m_Layer: 11
   m_Name: HealthGreenMonster
   m_TagString: Monster
@@ -133,15 +134,33 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.12, y: 1.92}
+    oldSize: {x: 1.06, y: 0.96}
     newSize: {x: 2.12, y: 1.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.12, y: 1.92}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95657354641929596
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645829228300318}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: feb526e9fed4b214abecce476ad1c12b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114189289730764424
 MonoBehaviour:
   m_ObjectHideFlags: 1
