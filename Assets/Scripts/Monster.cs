@@ -107,4 +107,12 @@ public class Monster : MonoBehaviour {
         GameManager.Instance.Pool.ReleaseObject(gameObject);
         GameManager.Instance.RemoveMonster(this);
     }
+
+    public void TakeDamage(int damage)
+    {
+        if (IsActive)
+        {
+            health.CurrentValue -= damage;   
+        }
+    }
 }

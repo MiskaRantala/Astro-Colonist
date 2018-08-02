@@ -120,6 +120,7 @@ MonoBehaviour:
   projectileType: smallattack
   projectileSpeed: 5
   attackCooldown: 2
+  damage: 10
 --- !u!212 &212212662767003532
 SpriteRenderer:
   m_ObjectHideFlags: 1
