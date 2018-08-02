@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a805908d2e6c8ce4da2b6de0e561f90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: phProjectile
+  projectileType: bigattack
   projectileSpeed: 4
   attackCooldown: 2
 --- !u!212 &212712098686186676
