@@ -55,7 +55,7 @@ public class GameManager : Singleton<GameManager>
         set
         {
             currency = value;
-            currencyTxt.text = "  " + value.ToString() + " <color=yellow>$</color>";
+            currencyTxt.text = "  " + value.ToString();
         }
     }
 

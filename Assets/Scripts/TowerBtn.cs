@@ -43,6 +43,6 @@ public class TowerBtn : MonoBehaviour {
 
     private void Start()
     {
-        priceTxt.text = Price + "$";
+        priceTxt.text = Price + "";
     }
 }
