@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114928334577838820}
   - component: {fileID: 61749989621577580}
   - component: {fileID: 50786339455102148}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OrangeMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}

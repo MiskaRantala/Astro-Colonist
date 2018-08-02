@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114042988774323760}
   - component: {fileID: 61520355847763022}
   - component: {fileID: 50043053719951428}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BlueMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
