@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 61402692686017340}
   - component: {fileID: 50755643872465090}
   m_Layer: 0
-  m_Name: OrangeMonster 1
+  m_Name: OrangeHealthMonster 1
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbd1a1d8c71cc74d9e28395af565c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthGroup: {fileID: 0}
   speed: 5
 --- !u!114 &114629347150068302
 MonoBehaviour:
