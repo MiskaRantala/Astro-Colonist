@@ -7,6 +7,9 @@ public class Monster : MonoBehaviour {
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private Stat health;
+
     private Stack<Node> path;
 
     public Point GridPosition { get; set; }
@@ -15,14 +18,22 @@ public class Monster : MonoBehaviour {
 
     public bool IsActive { get; set; }
 
+    private void Awake()
+    {
+        health.Initialize();
+    }
+
     private void Update()
     {
         Move();
     }
 
-    public void Spawn()
+    public void Spawn(int health)
     {
         transform.position = LevelManager.Instance.SpawnPortal.transform.position;
+
+        this.health.MaxValue = health;
+        this.health.CurrentValue = this.health.MaxValue;
 
         StartCoroutine(Scale(new Vector3(0.1f, 0.1f), new Vector3(1, 1), false));
 
