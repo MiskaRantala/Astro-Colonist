@@ -112,7 +112,14 @@ public class Monster : MonoBehaviour {
     {
         if (IsActive)
         {
-            health.CurrentValue -= damage;   
+            health.CurrentValue -= damage;
+
+            if (health.CurrentValue <= 0)
+            {
+                GameManager.Instance.Currency += 2;
+                IsActive = false;
+                GetComponent<Monster>().Release();
+            }
         }
     }
 }
