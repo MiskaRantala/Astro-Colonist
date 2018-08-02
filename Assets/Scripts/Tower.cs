@@ -10,6 +10,8 @@ public class Tower : MonoBehaviour {
     [SerializeField]
     private float projectileSpeed;
 
+    private Animator myAnimator;
+
     private SpriteRenderer mySpriteRenderer;
 
     private Monster target;
@@ -56,8 +58,9 @@ public class Tower : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
+        myAnimator = transform.parent.GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
@@ -97,6 +100,8 @@ public class Tower : MonoBehaviour {
             if (canAttack)
             {
                 Shoot();
+
+                myAnimator.SetTrigger("Attack");
 
                 canAttack = false;
             }
