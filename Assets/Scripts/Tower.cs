@@ -23,6 +23,9 @@ public class Tower : MonoBehaviour {
     [SerializeField]
     private float attackCooldown;
 
+    [SerializeField]
+    private int damage;
+
     public float ProjectileSpeed
     {
         get
@@ -41,6 +44,14 @@ public class Tower : MonoBehaviour {
         set
         {
             target = value;
+        }
+    }
+
+    public int Damage
+    {
+        get
+        {
+            return damage;
         }
     }
 

@@ -43,6 +43,7 @@ public class Projectile : MonoBehaviour {
         if (other.tag == "Monster")
         {
             Debug.Log("Monster hit");
+            GameManager.Instance.Pool.ReleaseObject(gameObject);
         }
     }
 }
