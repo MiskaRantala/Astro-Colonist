@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Click : MonoBehaviour
 {
-    public void LoadScrene(string scene)
+    public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
