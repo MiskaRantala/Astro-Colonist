@@ -156,9 +156,12 @@ public class Monster : MonoBehaviour {
 
             if (health.CurrentValue <= 0)
             {
-                GameManager.Instance.Currency += 2;
+                //SoundManager.Instance.PlaySFX("Hit");
+                GameManager.Instance.Currency += 2;                
                 IsActive = false;
                 GetComponent<Monster>().Release();
+                Tower.Instance.Target = null;
+                Tower.Instance.monsters.Dequeue();
             }
         }
     }

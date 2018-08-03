@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour {
+public class Tower : Singleton<Tower> {
 
     [SerializeField]
     private string projectileType;
@@ -16,7 +16,7 @@ public class Tower : MonoBehaviour {
 
     private Monster target;
 
-    private Queue<Monster> monsters = new Queue<Monster>();
+    public Queue<Monster> monsters = new Queue<Monster>();
 
     private bool canAttack = true;
 
@@ -92,7 +92,7 @@ public class Tower : MonoBehaviour {
             }
         }
 
-        if (Target == null && monsters.Count > 0)
+        if ((Target == null && monsters.Count > 0) || monsters.Count == 0)
         {
             Target = monsters.Dequeue();
         }

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: smallattack
   projectileSpeed: 5
-  attackCooldown: 2
+  attackCooldown: 1.5
   damage: 4
 --- !u!212 &212212662767003532
 SpriteRenderer:

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: bigattack
   projectileSpeed: 4
-  attackCooldown: 3
+  attackCooldown: 2.5
   damage: 10
 --- !u!212 &212712098686186676
 SpriteRenderer:
