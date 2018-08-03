@@ -119,8 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: smallattack
   projectileSpeed: 5
-  attackCooldown: 2
-  damage: 10
+  attackCooldown: 0.5
+  damage: 1
 --- !u!212 &212115390948387544
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: db43a7f5fb86ec140b69c3e6187cf3fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

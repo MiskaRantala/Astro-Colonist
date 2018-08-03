@@ -89,7 +89,7 @@ public class GameManager : Singleton<GameManager>
     // Use this for initialization
     void Start ()
     {
-        Currency = 100;
+        Currency = 50;
         Lives = 10;
         GameOverMenu.SetActive(false);
 	}

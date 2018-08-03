@@ -20,6 +20,8 @@ public class Tower : MonoBehaviour {
 
     private bool canAttack = true;
 
+    private AudioSource source;
+
     private float attackTimer;
 
     [SerializeField]
@@ -100,6 +102,8 @@ public class Tower : MonoBehaviour {
             if (canAttack)
             {
                 Shoot();
+
+                source = GetComponent<AudioSource>();
 
                 myAnimator.SetTrigger("Attack");
 
