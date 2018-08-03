@@ -39,6 +39,9 @@ public class GameManager : Singleton<GameManager>
 
     private Tower selectedTower;
 
+    [SerializeField]
+    private GameObject inGameMenu;
+
     public bool WaveActive
     {
         get
@@ -148,7 +151,20 @@ public class GameManager : Singleton<GameManager>
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1))
         {
-            Hover.Instance.Deactivate();
+            ShowIngameMenu();
+
+            if (selectedTower == null && Hover.Instance.IsVisible)
+            {
+                ShowIngameMenu();
+            }
+            else if (Hover.Instance.IsVisible)
+            {
+                DropTower();
+            } 
+            else if (selectedTower != null)
+            {
+                DeselectTower();
+            }
         }
     }
 
@@ -228,5 +244,25 @@ public class GameManager : Singleton<GameManager>
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ShowIngameMenu()
+    {
+        inGameMenu.SetActive(!inGameMenu.activeSelf);
+
+        if (!inGameMenu.activeSelf)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
+    }
+
+    private void DropTower()
+    {
+        ClickedBtn = null;
+        Hover.Instance.Deactivate();
     }
 }

@@ -8,6 +8,8 @@ public class Hover : Singleton<Hover> {
 
     private SpriteRenderer rangeSpriteRenderer;
 
+    public bool IsVisible { get; private set; }
+
 	// Use this for initialization
 	void Start () {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
@@ -35,6 +37,8 @@ public class Hover : Singleton<Hover> {
         rangeSpriteRenderer.enabled = true;
         spriteRenderer.sprite = sprite;
 
+        IsVisible = true; 
+
     }
 
     public void Deactivate()
@@ -43,5 +47,7 @@ public class Hover : Singleton<Hover> {
         rangeSpriteRenderer.enabled = false;
 
         GameManager.Instance.ClickedBtn = null;
+
+        IsVisible = false;
     }
 }
